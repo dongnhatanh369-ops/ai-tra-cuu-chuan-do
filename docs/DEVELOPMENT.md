@@ -34,6 +34,24 @@ Kiểm tra tại:
 pytest
 ```
 
+## API tính chuẩn độ
+
+Gửi `POST /api/v1/titration/calculate` với JSON:
+
+```json
+{
+  "analyte_volume": 25,
+  "analyte_volume_unit": "mL",
+  "titrant_volume": 23.6,
+  "titrant_volume_unit": "mL",
+  "titrant_molarity": 0.1,
+  "analyte_coefficient": 1,
+  "titrant_coefficient": 1
+}
+```
+
+API trả về nồng độ, số mol, công thức và các bước giải. Các hệ số mặc định là 1 cho phản ứng tỉ lệ 1:1.
+
 ## Quy tắc bảo mật
 
 - Không commit file `.env` hoặc API key.

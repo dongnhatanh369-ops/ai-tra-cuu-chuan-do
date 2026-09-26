@@ -11,7 +11,7 @@ Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra
 | Giai đoạn 0 - Khởi tạo nền tảng | Hoàn thành | Đã có cấu trúc backend, cấu hình và health check |
 | Frontend prototype hỗ trợ kiểm thử | Hoàn thành một phần | Đã làm trên nhánh `feature/frontend-phase1`, chưa tích hợp website chính |
 | Giai đoạn 1 - AI backend cơ bản | Chưa bắt đầu | Đây là ưu tiên tiếp theo |
-| Giai đoạn 2 - Bộ tính toán chuẩn độ | Chưa bắt đầu | Chưa triển khai module xác định |
+| Giai đoạn 2 - Bộ tính toán chuẩn độ | Đang thực hiện | Đã có module và API trên nhánh `feature/titration-calculator` |
 | Giai đoạn 3 - Tra cứu tài liệu RAG | Chưa bắt đầu | Chưa nạp dữ liệu tài liệu |
 | Giai đoạn 4 - Kết hợp AI và tính toán | Chưa bắt đầu | Phụ thuộc Giai đoạn 1-3 |
 | Giai đoạn 5 - Tích hợp website hiện tại | Chưa bắt đầu | Thực hiện sau khi API ổn định |
@@ -55,13 +55,15 @@ Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra
 
 ## Giai đoạn 2 - Bộ tính toán chuẩn độ
 
-- [ ] Tính số mol, nồng độ và thể tích.
-- [ ] Hỗ trợ hệ số phương trình phản ứng.
-- [ ] Hỗ trợ đơn vị mL/L và mmol/mol.
-- [ ] Tính giá trị trung bình từ nhiều lần chuẩn độ.
-- [ ] Kiểm tra dữ liệu đầu vào và cảnh báo đơn vị sai.
-- [ ] Trả về công thức và từng bước giải.
-- [ ] Đảm bảo AI không tự tính thay cho module xác định.
+- [x] Tính số mol, nồng độ và thể tích.
+- [x] Hỗ trợ hệ số phương trình phản ứng.
+- [x] Hỗ trợ đơn vị mL/L.
+- [x] Tính giá trị trung bình từ nhiều lần chuẩn độ.
+- [x] Kiểm tra dữ liệu đầu vào và cảnh báo đơn vị sai.
+- [x] Trả về công thức và từng bước giải qua API.
+- [x] Tách module tính toán khỏi AI.
+- [ ] Bổ sung hỗ trợ mmol/mol và các bài toán nâng cao.
+- [ ] Tích hợp API vào website hiện tại.
 
 ## Giai đoạn 3 - Tra cứu tài liệu bằng RAG
 
