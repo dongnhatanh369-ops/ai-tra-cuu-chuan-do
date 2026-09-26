@@ -4,6 +4,19 @@
 
 Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra cứu tài liệu và hỗ trợ tính toán hóa học. Website hiện tại sẽ được tích hợp sau khi API AI ổn định.
 
+## Trạng thái tổng quan
+
+| Hạng mục | Trạng thái | Ghi chú |
+|---|---|---|
+| Giai đoạn 0 - Khởi tạo nền tảng | Hoàn thành | Đã có cấu trúc backend, cấu hình và health check |
+| Frontend prototype hỗ trợ kiểm thử | Hoàn thành một phần | Đã làm trên nhánh `feature/frontend-phase1`, chưa tích hợp website chính |
+| Giai đoạn 1 - AI backend cơ bản | Chưa bắt đầu | Đây là ưu tiên tiếp theo |
+| Giai đoạn 2 - Bộ tính toán chuẩn độ | Chưa bắt đầu | Chưa triển khai module xác định |
+| Giai đoạn 3 - Tra cứu tài liệu RAG | Chưa bắt đầu | Chưa nạp dữ liệu tài liệu |
+| Giai đoạn 4 - Kết hợp AI và tính toán | Chưa bắt đầu | Phụ thuộc Giai đoạn 1-3 |
+| Giai đoạn 5 - Tích hợp website hiện tại | Chưa bắt đầu | Thực hiện sau khi API ổn định |
+| Giai đoạn 6 - Triển khai và vận hành | Chưa bắt đầu | Thực hiện sau MVP |
+
 ## Nguyên tắc phát triển
 
 - Ưu tiên phát triển AI backend trước, không xây dựng lại frontend.
@@ -30,6 +43,15 @@ Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra
 - [ ] Xử lý lỗi, timeout và giới hạn tần suất gọi AI.
 - [ ] Thiết lập logging và cấu trúc phản hồi thống nhất.
 - [ ] Viết test cho API và các tình huống lỗi.
+
+### Frontend prototype hỗ trợ Giai đoạn 1
+
+- [x] Giao diện chat thử nghiệm.
+- [x] Ô nhập câu hỏi tiếng Việt.
+- [x] Hiển thị tin nhắn và trạng thái lỗi.
+- [x] Chuẩn bị kết nối tới `POST /api/v1/ai/chat`.
+- [ ] Kết nối backend AI thật.
+- [ ] Tích hợp vào website hiện tại.
 
 ## Giai đoạn 2 - Bộ tính toán chuẩn độ
 
