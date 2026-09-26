@@ -52,6 +52,20 @@ Gửi `POST /api/v1/titration/calculate` với JSON:
 
 API trả về nồng độ, số mol, công thức và các bước giải. Các hệ số mặc định là 1 cho phản ứng tỉ lệ 1:1.
 
+## API tra cứu tài liệu
+
+Đặt file `.md` hoặc `.txt` vào thư mục `documents/`, sau đó khởi động lại backend. Gửi:
+
+```text
+POST /api/v1/documents/search
+```
+
+```json
+{ "query": "điểm tương đương chỉ thị", "limit": 5 }
+```
+
+Phiên bản đầu tiên dùng tìm kiếm từ khóa xác định để kiểm thử pipeline RAG. Embedding/vector database và bước gửi ngữ cảnh cho mô hình AI sẽ được bổ sung tiếp theo.
+
 ## Quy tắc bảo mật
 
 - Không commit file `.env` hoặc API key.

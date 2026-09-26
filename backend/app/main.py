@@ -1,7 +1,10 @@
 from fastapi import FastAPI
+from pathlib import Path
 
 from .calculator import CalculationError, calculate_analyte_concentration
+from .document_store import DocumentStore
 from .schemas import TitrationCalculationRequest, TitrationCalculationResponse
+from .schemas import DocumentSearchRequest, DocumentSearchResponse, DocumentSearchResult
 
 
 app = FastAPI(
@@ -9,12 +12,27 @@ app = FastAPI(
     description="API nền tảng cho tra cứu tài liệu và tính toán chuẩn độ.",
     version="0.1.0",
 )
+document_store = DocumentStore(Path(__file__).parents[3] / "documents")
+document_store.reload()
 
 
 @app.get("/health", tags=["system"])
 def health_check() -> dict[str, str]:
     """Return a small readiness response for local development and deployment checks."""
     return {"status": "ok", "service": "ai-tra-cuu-chuan-do"}
+
+
+@app.post("/api/v1/documents/search", response_model=DocumentSearchResponse, tags=["documents"])
+def search_documents(payload: DocumentSearchRequest) -> DocumentSearchResponse:
+    """Find relevant document chunks for a future AI/RAG answer."""
+    matches = document_store.search(payload.query, payload.limit)
+    return DocumentSearchResponse(
+        query=payload.query,
+        results=[
+            DocumentSearchResult(source=item.source, chunk_id=item.chunk_id, text=item.text)
+            for item in matches
+        ],
+    )
 
 
 @app.post("/api/v1/titration/calculate", response_model=TitrationCalculationResponse, tags=["titration"])

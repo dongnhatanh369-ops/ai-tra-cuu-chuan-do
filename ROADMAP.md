@@ -12,7 +12,7 @@ Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra
 | Frontend prototype hỗ trợ kiểm thử | Hoàn thành một phần | Đã làm trên nhánh `feature/frontend-phase1`, chưa tích hợp website chính |
 | Giai đoạn 1 - AI backend cơ bản | Chưa bắt đầu | Đây là ưu tiên tiếp theo |
 | Giai đoạn 2 - Bộ tính toán chuẩn độ | Đang thực hiện | Đã có module và API trên nhánh `feature/titration-calculator` |
-| Giai đoạn 3 - Tra cứu tài liệu RAG | Chưa bắt đầu | Chưa nạp dữ liệu tài liệu |
+| Giai đoạn 3 - Tra cứu tài liệu RAG | Đang thực hiện | Đã có nạp/chia đoạn và API tìm kiếm trên nhánh riêng |
 | Giai đoạn 4 - Kết hợp AI và tính toán | Chưa bắt đầu | Phụ thuộc Giai đoạn 1-3 |
 | Giai đoạn 5 - Tích hợp website hiện tại | Chưa bắt đầu | Thực hiện sau khi API ổn định |
 | Giai đoạn 6 - Triển khai và vận hành | Chưa bắt đầu | Thực hiện sau MVP |
@@ -67,11 +67,11 @@ Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra
 
 ## Giai đoạn 3 - Tra cứu tài liệu bằng RAG
 
-- [ ] Thu thập và chuẩn hóa tài liệu chuẩn độ được phép sử dụng.
+- [x] Thu thập và chuẩn hóa tài liệu chuẩn độ được phép sử dụng.
 - [ ] Đọc PDF, DOCX và TXT.
-- [ ] Chia tài liệu thành các đoạn nhỏ.
+- [x] Chia tài liệu Markdown/TXT thành các đoạn nhỏ.
 - [ ] Tạo embedding và lưu vào vector database.
-- [ ] Tìm đoạn tài liệu liên quan theo câu hỏi.
+- [x] Tìm đoạn tài liệu liên quan theo câu hỏi.
 - [ ] Gửi ngữ cảnh tìm được cho AI để tạo câu trả lời.
 - [ ] Trả về nguồn tài liệu và thông tin tham khảo.
 - [ ] Thông báo rõ khi không có đủ dữ liệu để trả lời.

@@ -34,6 +34,7 @@
 ## Đang thực hiện
 
 - [x] Giai đoạn 2: bộ tính toán chuẩn độ cơ bản trên nhánh `feature/titration-calculator`.
+- [x] Giai đoạn 3 bước đầu: nạp/chia đoạn và tìm kiếm tài liệu trên nhánh `feature/document-rag`.
 - [ ] Thiết kế API backend cho hỏi đáp AI.
 - [ ] Xây dựng system prompt chuyên về chuẩn độ.
 - [ ] Kết nối mô hình AI.

@@ -19,3 +19,19 @@ class TitrationCalculationResponse(BaseModel):
     titrant_moles: float
     formula: str
     steps: list[str]
+
+
+class DocumentSearchRequest(BaseModel):
+    query: str = Field(min_length=1, max_length=1000)
+    limit: int = Field(default=5, ge=1, le=20)
+
+
+class DocumentSearchResult(BaseModel):
+    source: str
+    chunk_id: int
+    text: str
+
+
+class DocumentSearchResponse(BaseModel):
+    query: str
+    results: list[DocumentSearchResult]
