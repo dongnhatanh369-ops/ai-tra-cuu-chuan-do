@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+
 app = FastAPI(
     title="AI Tra Cứu Chuẩn Độ",
     description="API nền tảng cho tra cứu tài liệu và tính toán chuẩn độ.",
@@ -11,3 +12,4 @@ app = FastAPI(
 def health_check() -> dict[str, str]:
     """Return a small readiness response for local development and deployment checks."""
     return {"status": "ok", "service": "ai-tra-cuu-chuan-do"}
+
