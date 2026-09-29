@@ -6,16 +6,16 @@ Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra
 
 ## Trạng thái tổng quan
 
-| Hạng mục | Trạng thái | Ghi chú |
+| Hạng mục | Trạng thái | Nhánh/ghi chú |
 |---|---|---|
-| Giai đoạn 0 - Khởi tạo nền tảng | Hoàn thành | Đã có cấu trúc backend, cấu hình và health check |
-| Frontend prototype hỗ trợ kiểm thử | Hoàn thành một phần | Đã làm trên nhánh `feature/frontend-phase1`, chưa tích hợp website chính |
-| Giai đoạn 1 - AI backend cơ bản | Chưa bắt đầu | Đây là ưu tiên tiếp theo |
-| Giai đoạn 2 - Bộ tính toán chuẩn độ | Chưa bắt đầu | Chưa triển khai module xác định |
-| Giai đoạn 3 - Tra cứu tài liệu RAG | Chưa bắt đầu | Chưa nạp dữ liệu tài liệu |
-| Giai đoạn 4 - Kết hợp AI và tính toán | Chưa bắt đầu | Phụ thuộc Giai đoạn 1-3 |
-| Giai đoạn 5 - Tích hợp website hiện tại | Chưa bắt đầu | Thực hiện sau khi API ổn định |
-| Giai đoạn 6 - Triển khai và vận hành | Chưa bắt đầu | Thực hiện sau MVP |
+| Giai đoạn 0 - Khởi tạo nền tảng | Hoàn thành | `main` |
+| Frontend prototype responsive và đa ngôn ngữ | Hoàn thành | `feature/integrated-ai` |
+| Giai đoạn 1 - AI backend cơ bản | Chưa hoàn thành | Ưu tiên tiếp theo |
+| Giai đoạn 2 - Bộ tính toán chuẩn độ | Hoàn thành bản cơ bản | `feature/titration-calculator` |
+| Giai đoạn 3 - Tra cứu tài liệu bước đầu | Hoàn thành bản cơ bản | `feature/document-rag` |
+| Giai đoạn 4 - Kết hợp AI, tra cứu và tính toán | Chưa hoàn thành | Phụ thuộc Giai đoạn 1-3 |
+| Giai đoạn 5 - Tích hợp website hiện tại | Chưa hoàn thành | Chờ API AI ổn định |
+| Giai đoạn 6 - Triển khai và vận hành | Chưa hoàn thành | Sau MVP |
 
 ## Nguyên tắc phát triển
 
@@ -23,7 +23,7 @@ Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra
 - Phép tính hóa học phải do module xác định thực hiện.
 - AI dùng để hiểu câu hỏi, tra cứu tài liệu và giải thích kết quả.
 - API key và dữ liệu nhạy cảm chỉ được lưu ở backend.
-- Các API phải được thiết kế để website hiện tại dễ dàng tích hợp.
+- Code mới phát triển trên nhánh riêng rồi mới tạo Pull Request vào `main`.
 
 ## Giai đoạn 0 - Khởi tạo nền tảng
 
@@ -44,32 +44,36 @@ Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra
 - [ ] Thiết lập logging và cấu trúc phản hồi thống nhất.
 - [ ] Viết test cho API và các tình huống lỗi.
 
-### Frontend prototype hỗ trợ Giai đoạn 1
+## Giao diện hỗ trợ Giai đoạn 1
 
 - [x] Giao diện chat thử nghiệm.
-- [x] Ô nhập câu hỏi tiếng Việt.
-- [x] Hiển thị tin nhắn và trạng thái lỗi.
-- [x] Chuẩn bị kết nối tới `POST /api/v1/ai/chat`.
-- [ ] Kết nối backend AI thật.
+- [x] Responsive cho điện thoại, máy tính bảng và desktop.
+- [x] Hỗ trợ tiếng Việt và English.
+- [x] Lưu lựa chọn ngôn ngữ bằng `localStorage`.
+- [x] Hỗ trợ màn hình cảm ứng, dọc/ngang và safe area.
+- [ ] Kết nối với backend AI thật.
 - [ ] Tích hợp vào website hiện tại.
 
 ## Giai đoạn 2 - Bộ tính toán chuẩn độ
 
-- [ ] Tính số mol, nồng độ và thể tích.
-- [ ] Hỗ trợ hệ số phương trình phản ứng.
-- [ ] Hỗ trợ đơn vị mL/L và mmol/mol.
-- [ ] Tính giá trị trung bình từ nhiều lần chuẩn độ.
-- [ ] Kiểm tra dữ liệu đầu vào và cảnh báo đơn vị sai.
-- [ ] Trả về công thức và từng bước giải.
-- [ ] Đảm bảo AI không tự tính thay cho module xác định.
+- [x] Tính số mol, nồng độ và thể tích.
+- [x] Hỗ trợ hệ số phương trình phản ứng.
+- [x] Hỗ trợ đơn vị mL/L.
+- [x] Tính giá trị trung bình từ nhiều lần chuẩn độ.
+- [x] Kiểm tra dữ liệu đầu vào và cảnh báo đơn vị sai.
+- [x] Trả về công thức và từng bước giải qua API.
+- [x] Tách module tính toán khỏi AI.
+- [ ] Bổ sung hỗ trợ mmol/mol và các bài toán nâng cao.
+- [ ] Tích hợp API vào website hiện tại.
 
 ## Giai đoạn 3 - Tra cứu tài liệu bằng RAG
 
-- [ ] Thu thập và chuẩn hóa tài liệu chuẩn độ được phép sử dụng.
-- [ ] Đọc PDF, DOCX và TXT.
-- [ ] Chia tài liệu thành các đoạn nhỏ.
+- [x] Nạp và chuẩn hóa tài liệu Markdown/TXT.
+- [x] Chia tài liệu thành các đoạn nhỏ.
+- [x] Tìm đoạn tài liệu liên quan theo từ khóa.
+- [x] Tạo API tìm kiếm tài liệu.
+- [ ] Đọc tài liệu PDF và DOCX.
 - [ ] Tạo embedding và lưu vào vector database.
-- [ ] Tìm đoạn tài liệu liên quan theo câu hỏi.
 - [ ] Gửi ngữ cảnh tìm được cho AI để tạo câu trả lời.
 - [ ] Trả về nguồn tài liệu và thông tin tham khảo.
 - [ ] Thông báo rõ khi không có đủ dữ liệu để trả lời.
@@ -103,9 +107,10 @@ Xây dựng AI backend cho website chuẩn độ hiện có, có khả năng tra
 
 ## Tiêu chí MVP
 
-- Người dùng gửi được câu hỏi tiếng Việt qua API.
-- AI trả lời theo tài liệu chuẩn độ được cung cấp.
-- Bộ tính toán cho kết quả đúng và có đơn vị.
-- Kết quả có công thức, từng bước giải và nguồn tham khảo.
-- Website hiện tại có thể gọi API bằng HTTP.
-- API key không xuất hiện ở frontend.
+- [ ] Người dùng gửi được câu hỏi tiếng Việt qua API AI.
+- [x] Bộ tính toán có kết quả và đơn vị cho các trường hợp cơ bản.
+- [x] API tìm kiếm được tài liệu Markdown/TXT.
+- [ ] AI trả lời theo tài liệu chuẩn độ được cung cấp.
+- [ ] Kết quả có công thức, từng bước giải và nguồn tham khảo.
+- [ ] Website hiện tại có thể gọi API bằng HTTP.
+- [x] API key không xuất hiện ở frontend.
