@@ -29,6 +29,8 @@
 - [x] Hỗ trợ safe area trên thiết bị có tai thỏ.
 - [x] Hỗ trợ màn hình dọc và ngang.
 - [x] Đã chạy thử giao diện tại cổng local `5504`.
+- [x] Thêm chuyển ngôn ngữ Việt/English cho giao diện.
+- [x] Lưu ngôn ngữ người dùng bằng `localStorage`.
 - [ ] Chưa tích hợp vào website chính.
 - [ ] Chưa hoạt động hoàn chỉnh vì backend AI chưa có endpoint tương ứng.
 

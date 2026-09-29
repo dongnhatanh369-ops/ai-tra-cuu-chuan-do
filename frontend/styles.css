@@ -19,6 +19,9 @@ button, textarea { -webkit-tap-highlight-color: transparent; }
 }
 
 .eyebrow { color: #356ae6; font-size: .75rem; font-weight: 800; letter-spacing: .14em; margin: 0 0 10px; }
+.topbar { align-items: flex-start; display: flex; justify-content: space-between; gap: 16px; }
+.language-picker { align-items: center; color: #647089; display: flex; font-size: .85rem; gap: 8px; }
+select { background: #fff; border: 1px solid #cbd5e5; border-radius: 8px; color: #172033; font: inherit; padding: 8px 10px; }
 h1 { font-size: clamp(1.85rem, 8vw, 3.5rem); line-height: 1.08; margin: 0 0 14px; overflow-wrap: anywhere; }
 .subtitle { color: #647089; line-height: 1.6; margin: 0 0 24px; }
 
@@ -42,6 +45,8 @@ button:disabled { cursor: wait; opacity: .6; }
 @media (max-width: 480px) {
   .app-shell { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
   .subtitle { font-size: .95rem; }
+  .topbar { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .language-picker { align-self: flex-end; }
   .conversation { min-height: 48svh; }
   .message { max-width: 92%; }
   .form-footer { align-items: stretch; flex-direction: column; }
