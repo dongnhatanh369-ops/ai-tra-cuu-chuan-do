@@ -4,63 +4,67 @@
 
 - Repository: `ai-tra-cuu-chuan-do`
 - Nhánh chính: `main`
-- Nhánh phát triển frontend: `feature/frontend-phase1`
+- Nhánh tích hợp: `feature/integrated-ai`
 - Trạng thái: Đang phát triển nền tảng AI backend
 
 ## Đã hoàn thành
 
 ### Giai đoạn 0 - Khởi tạo dự án
 
-- [x] Tạo repository và cấu hình nhánh `main`.
-- [x] Tạo cấu trúc thư mục backend, frontend, tài liệu và dữ liệu.
+- [x] Tạo repository và nhánh `main`.
+- [x] Tạo cấu trúc backend, frontend, tài liệu và dữ liệu.
 - [x] Chọn Python/FastAPI làm nền tảng backend.
-- [x] Tạo `pyproject.toml`.
-- [x] Tạo `.env.example` và `.gitignore`.
+- [x] Tạo cấu hình dự án, `.env.example` và `.gitignore`.
 - [x] Tạo API health check tại `GET /health`.
-- [x] Viết hướng dẫn phát triển tại `docs/DEVELOPMENT.md`.
-- [x] Cập nhật roadmap theo hướng phát triển AI backend trước.
+- [x] Viết hướng dẫn phát triển.
 
-### Frontend thử nghiệm - Nhánh riêng
+### Frontend thử nghiệm
 
 - [x] Tạo giao diện chat AI thử nghiệm.
 - [x] Tạo ô nhập câu hỏi tiếng Việt.
-- [x] Hiển thị câu hỏi người dùng và câu trả lời AI.
-- [x] Hiển thị trạng thái đang xử lý và lỗi kết nối.
-- [x] Cấu hình gọi API `POST /api/v1/ai/chat`.
-- [x] Đẩy lên nhánh `feature/frontend-phase1`.
+- [x] Hiển thị câu hỏi, câu trả lời, trạng thái xử lý và lỗi kết nối.
+- [x] Chuẩn bị gọi API `POST /api/v1/ai/chat`.
+- [x] Tối ưu responsive cho điện thoại, máy tính bảng và desktop.
+- [x] Tối ưu vùng nhập liệu và nút bấm cho màn hình cảm ứng.
+- [x] Hỗ trợ safe area trên thiết bị có tai thỏ.
+- [x] Hỗ trợ màn hình dọc và ngang.
+- [x] Đã chạy thử giao diện tại cổng local `5504`.
 - [ ] Chưa tích hợp vào website chính.
 - [ ] Chưa hoạt động hoàn chỉnh vì backend AI chưa có endpoint tương ứng.
 
+### Giai đoạn 2 - Bộ tính toán chuẩn độ
+
+- [x] Module tính số mol, nồng độ và thể tích.
+- [x] Hỗ trợ hệ số phương trình phản ứng.
+- [x] Hỗ trợ đơn vị mL/L.
+- [x] API tính toán `POST /api/v1/titration/calculate`.
+
+### Giai đoạn 3 - Tra cứu tài liệu bước đầu
+
+- [x] Nạp tài liệu Markdown/TXT.
+- [x] Chia tài liệu thành các đoạn nhỏ.
+- [x] Tìm kiếm đoạn liên quan theo từ khóa.
+- [x] API tra cứu `POST /api/v1/documents/search`.
+
 ## Đang thực hiện
 
-- [x] Giai đoạn 2: bộ tính toán chuẩn độ cơ bản trên nhánh `feature/titration-calculator`.
-- [x] Giai đoạn 3 bước đầu: nạp/chia đoạn và tìm kiếm tài liệu trên nhánh `feature/document-rag`.
-- [ ] Thiết kế API backend cho hỏi đáp AI.
+- [ ] Thiết kế API backend hỏi đáp AI.
 - [ ] Xây dựng system prompt chuyên về chuẩn độ.
 - [ ] Kết nối mô hình AI.
 - [ ] Phân loại câu hỏi tra cứu, tính toán, quy trình và an toàn.
+- [ ] Bổ sung embedding và vector database cho RAG.
 
 ## Chưa thực hiện
 
-- [ ] Bộ tính toán chuẩn độ xác định.
-- [ ] Tra cứu tài liệu bằng RAG.
-- [ ] Quản lý và nạp tài liệu PDF/DOCX/TXT.
+- [ ] Đọc tài liệu PDF/DOCX.
+- [ ] Gửi ngữ cảnh tài liệu cho mô hình AI.
 - [ ] Kết nối frontend với backend thật.
 - [ ] Tích hợp vào website hiện tại.
 - [ ] Kiểm thử end-to-end.
 - [ ] Triển khai production.
 
-## Lịch sử thay đổi chính
-
-| Commit | Nội dung |
-|---|---|
-| `b576f4c` | Khởi tạo cấu trúc dự án Giai đoạn 0 |
-| `9994441` | Cập nhật roadmap, ưu tiên AI backend |
-| `b9a6157` | Tạo frontend thử nghiệm trên nhánh riêng |
-| `a710c8b` | Loại frontend thử nghiệm khỏi `main` |
-
 ## Ghi chú
 
-- `main` chỉ giữ nền tảng và tài liệu chính của dự án.
-- Các tính năng mới nên phát triển trên nhánh riêng rồi mới tạo Pull Request.
+- Các tính năng mới được phát triển trên nhánh riêng rồi mới tạo Pull Request.
+- `README.md` giữ nguyên nội dung ban đầu.
 - Không lưu API key thật trong repository.
